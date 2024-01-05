@@ -4,7 +4,10 @@ export const getLetters = (heading: HTMLElement) => {
     if (heading)
       return heading.textContent
         .split("")
-        .map((letter) => `<span class='inline-block translate-y-full rotate-45'>${letter}</span>`)
+        .map(
+          (letter) =>
+            `<span class='inline-block translate-y-full rotate-45'>${letter === " " ? "&nbsp;" : letter}</span>`
+        )
         .join("");
   } catch (error) {
     console.log("El elemento html no existe");
