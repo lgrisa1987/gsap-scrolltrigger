@@ -1,3 +1,20 @@
-<section class='section flex-center'>
-  <h2 class='text-[20vw]'>Fin</h2>
+<section class="section flex-center" id="footer">
+  <h2 class="text-[20vw] overflow-hidden" id="fin">Fin</h2>
 </section>
+<script>
+  import { getLetters, textAnimation } from "../utils";
+
+  const fin = document.querySelector("#fin") as HTMLElement;
+  /* Llama a la función getLetters que transforma separa las letras en <span/> */
+  fin.innerHTML = getLetters(fin);
+
+  const tween = gsap.to("#fin span", textAnimation());
+
+  ScrollTrigger.create({
+    trigger: "#footer",
+    start: "-10%",
+    end: "bottom bottom",
+    animation: tween,
+    /* markers:true */ /* Activa los marcadores si necesitás referencia */
+  });
+</script>

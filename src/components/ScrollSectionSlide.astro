@@ -2,10 +2,11 @@
 type ScrollSectionSlideProps = {
   title: string;
   bgColor: string;
+  i: number;
 };
 const { title, bgColor } = Astro.props as ScrollSectionSlideProps;
 ---
 
-<div class={`w-screen ${bgColor} flex-center flex-shrink-0 h-full`}>
-  <h2 class='text-[15vw] overflow-hidden'>{title}</h2>
+<div class={`w-screen ${bgColor} flex-center flex-shrink-0 h-full slide`}>
+  <h2 class="text-[15vw] overflow-hidden title-scroll">{title}</h2>
 </div>
