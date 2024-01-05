@@ -2,6 +2,11 @@
   <h2 class="text-[20vw] overflow-hidden" id="fin">Fin</h2>
 </section>
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
   import { getLetters, textAnimation } from "../utils";
 
   const fin = document.querySelector("#fin") as HTMLElement;

@@ -1,5 +1,4 @@
 ---
-import { gsap } from "gsap";
 import ScrollSectionSlide from "./ScrollSectionSlide.astro";
 
 const slides = [
@@ -16,6 +15,11 @@ const slides = [
 </section>
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
   import { getLetters, textAnimation } from "../utils";
   const slider = document.querySelector("#slider");
   const sliderTitles = [...document.querySelectorAll(".title-scroll")];
