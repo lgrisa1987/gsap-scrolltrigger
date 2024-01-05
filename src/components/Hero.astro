@@ -1,0 +1,27 @@
+---
+import { gsap } from 'gsap';
+---
+
+<section class='section section-center'>
+  <h1 class='text-[20vw] overflow-hidden opacity-0' id='main-title'>
+    Scrolleá
+  </h1>
+</section>
+
+<script>
+  import { getLetters } from '../utils';
+
+  const title = document.querySelector('#main-title') as HTMLElement;
+
+  title.innerHTML = getLetters(title);
+
+  gsap.set('#main-title', { autoAlpha: 1 });
+  gsap.to('#main-title span', {
+    y: 0,
+    rotation: 0,
+    ease: 'expo',
+    duration: 1,
+    delay: 0.5,
+    stagger: 0.1,
+  });
+</script>

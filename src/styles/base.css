@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border antialiased text-pretty leading-none font-bebas;
+}
+html,
+body,
+main {
+  @apply h-full;
+}
+
+.section {
+  @apply h-dvh;
+}
+.section-center {
+  @apply flex justify-center items-center;
+}

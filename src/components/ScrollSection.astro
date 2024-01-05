@@ -1,0 +1,37 @@
+---
+import { gsap } from 'gsap';
+import ScrollSectionSlide from './ScrollSectionSlide.astro';
+
+const slides = [
+  { title: 'gsap', bgColor: 'bg-slate-200' },
+  { title: 'scrolltrigger', bgColor: 'bg-green-300' },
+  { title: 'es lo más', bgColor: 'bg-red-400' },
+];
+---
+
+<section class='section' id='scroll-section'>
+  <div class='w-fit flex flex-nowrap h-full' id='slider'>
+    {slides.map((slide) => <ScrollSectionSlide {...slide} />)}
+  </div>
+</section>
+
+<script>
+  const slider = document.querySelector('#slider');
+
+  const scrollAmount = () => -(slider.scrollWidth - window.innerWidth);
+
+  const tween = gsap.to(slider, {
+    x: scrollAmount,
+    ease: 'none',
+  });
+
+  ScrollTrigger.create({
+    trigger: '#scroll-section',
+    start: 'top top',
+    end: () => `+=${Math.abs(scrollAmount())}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+  });
+</script>
