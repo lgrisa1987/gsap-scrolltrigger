@@ -8,12 +8,11 @@ const slides = [
 ];
 ---
 
-<section class="section" id="scroll-section">
-  <div class="w-fit flex flex-nowrap h-full" id="slider">
+<section class="section w-full overflow-x-hidden" id="scroll-section">
+  <div class="w-[300%] flex flex-nowrap h-full" id="slider">
     {slides.map((slide) => <ScrollSectionSlide {...slide} />)}
   </div>
 </section>
-
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
