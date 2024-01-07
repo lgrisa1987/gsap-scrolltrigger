@@ -8,13 +8,11 @@
 
 html,
 body,
-main {
+main,
+.section {
   @apply h-full;
 }
 
-.section {
-  @apply h-dvh;
-}
 .flex-center {
   @apply flex justify-center items-center;
 }

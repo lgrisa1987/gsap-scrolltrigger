@@ -1,14 +1,17 @@
-<section class="section flex-center">
-  <h1 class="text-[20vw] overflow-hidden opacity-0" id="main-title">Scrolleá</h1>
+<section class='section flex-center'>
+  <h1 class='text-[20vw] overflow-hidden opacity-0' id='main-title'>
+    Scrolleá
+  </h1>
 </section>
 
 <script>
-  import { gsap } from "gsap";
-  import { getLetters, textAnimation } from "../utils";
-  const title = document.querySelector("#main-title") as HTMLElement;
+  import { gsap } from 'gsap';
+  import { getLetters, textAnimation } from '../utils';
+  const title = document.querySelector('#main-title') as HTMLElement;
 
   title.innerHTML = getLetters(title);
 
   gsap.set(title, { autoAlpha: 1 });
-  gsap.to("#main-title span", textAnimation(0.5));
+  gsap.to('#main-title span', textAnimation(0.5));
+  alert(window.innerHeight);
 </script>
